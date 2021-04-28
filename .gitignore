@@ -1,0 +1,4 @@
+.terraform
+dist/
+env/
+package/
