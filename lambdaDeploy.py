@@ -10,11 +10,8 @@ def handler (event, context):
   for bucket in s3.buckets.all():
     print(bucket.name)
 
-  dirt = s3.Bucket('dirt-media')
-  dirt.put_object(Key='aFile.txt', Body='someText')
+  testBucket = s3.Bucket('tomz-test')
+  testBucket.put_object(Key='aFile.txt', Body='someText')
   response = requests.get('https://api.github.com/user')
   print(response.text)
   
-
-
-handler({},{})

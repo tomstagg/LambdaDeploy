@@ -4,7 +4,7 @@
 rm -rf dist
 pip install --target ./dist/package -r requirements_deploy.txt
 pushd dist/package
-zip -9rq ../lambda.zip .
+zip -9rq ../lambdaDeploy.zip .
 popd
 
-zip -urq ./dist/lambda.zip **/*.py *.py -x "package/*" -x "env/*"
+zip -urq ./dist/lambdaDeploy.zip **/*.py *.py -x "package/*" -x "env/*"

@@ -1,21 +1,21 @@
 provider "aws" {
-  region = "eu-west-1"
+  region = "eu-west-2"
 }
 
 terraform {
   backend "s3" {
-    bucket = "alpha-terraform-dev"
+    bucket = "tomz-test"
     key = "tf-terraform"
-    region = "eu-west-1"
+    region = "eu-west-2"
   }
 }
 
 resource "aws_lambda_function" "lambda_function" {
   role = aws_iam_role.lambda_role.arn
-  handler = "lambda.handler"
-  runtime = "python3.6"
-  filename = "./dist/lambda.zip"
-  source_code_hash = filebase64sha256("./dist/lambda.zip")
+  handler = "lambdaDeploy.handler"
+  runtime = "python3.8"
+  filename = "./dist/lambdaDeploy.zip"
+  source_code_hash = filebase64sha256("./dist/lambdaDeploy.zip")
   timeout = 300
   function_name = "basic_lambda"
 }

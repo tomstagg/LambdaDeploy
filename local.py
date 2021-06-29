@@ -1,0 +1,3 @@
+import lambdaDeploy
+
+lambdaDeployyes.handler({},{})
